@@ -8,45 +8,93 @@ import (
 	"log"
 	"net"
 	"net/http"
+	"os"
 	"runtime"
 	"strconv"
 	"strings"
 	"time"
 
 	firebase "firebase.google.com/go"
+	"github.com/gorilla/mux"
 	"github.com/shirou/gopsutil/cpu"
 	"github.com/shirou/gopsutil/disk"
 	"github.com/shirou/gopsutil/host"
 	"github.com/shirou/gopsutil/mem"
 	"google.golang.org/api/option"
-
-	"github.com/gorilla/mux"
 )
 
-func prosses(w http.ResponseWriter, r *http.Request) {
-	whriteInFile("status", "PROSESANDO: "+mux.Vars(r)["text"])
-	go subProsses(mux.Vars(r)["text"])
+func main() {
+	go backgrounProsses()
+	log.Fatal(http.ListenAndServe(":"+getPortEnvaironment(), getRoutes()))
 }
 
-func whrite(w http.ResponseWriter, r *http.Request) {
-	whriteInFile(mux.Vars(r)["filename"], mux.Vars(r)["text"])
+/*CONFIG*/
+
+func backgrounProsses() {
+	for {
+		_hostMetrics := getMetrics()
+		ctx := context.Background()
+		opt := option.WithCredentialsFile("firebase_key.json")
+		config := &firebase.Config{
+			ProjectID:   "hostmetrics-cad87",
+			DatabaseURL: "https://hostmetrics-cad87.firebaseio.com",
+		}
+		app, err := firebase.NewApp(ctx, config, opt)
+		check(err)
+		client, err := app.Database(ctx)
+		check(err)
+		if err := client.NewRef("hosts/"+_hostMetrics.HostIDUiid).Set(ctx, _hostMetrics); err != nil {
+			check(err)
+		}
+		time.Sleep(5000 * time.Millisecond)
+	}
 }
 
-func read(w http.ResponseWriter, r *http.Request) {
+func getRoutes() *mux.Router {
+	router := mux.NewRouter()
+	router.HandleFunc("/prosses/{text}", prossesInNode).Name("prosses").Methods("GET")
+	router.HandleFunc("/whrite/{filename}/{text}", whriteStatusNode).Name("whriteInFile").Methods("GET")
+	router.HandleFunc("/read/{filename}", readStatusNode).Name("readInFile").Methods("GET")
+	router.HandleFunc("/metrics", getMetricsFromNode).Name("getMetricsFromNode").Methods("GET")
+	return router
+}
+
+func getPortEnvaironment() string {
+	port := os.Getenv("PORT")
+	if port != "" {
+		return port
+	}
+	return "80"
+}
+
+/*CONTROLLERS*/
+
+func whriteStatusNode(w http.ResponseWriter, r *http.Request) {
+	response, err := json.Marshal(whriteInFile(mux.Vars(r)["filename"], mux.Vars(r)["text"]))
+	check(err)
+	fmt.Fprintf(w, string(response))
+}
+
+func readStatusNode(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, readInFile(mux.Vars(r)["filename"]))
 }
 
-func metrics(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, getMetrics())
+func getMetricsFromNode(w http.ResponseWriter, r *http.Request) {
+	response, err := json.Marshal(getMetrics())
+	check(err)
+	fmt.Fprintf(w, string(response))
 }
 
-func subProsses(valor string) {
-	fmt.Println("ejecuta el .exe con el valor" + valor)
-	time.Sleep(10000 * time.Millisecond)
-	whriteInFile("status", "online")
+func prossesInNode(w http.ResponseWriter, r *http.Request) {
+	whriteInFile("status", "PROSESANDO: "+mux.Vars(r)["text"])
+	go prossesCia(mux.Vars(r)["text"])
 }
 
-func getMetrics() string {
+/*CORE*/
+
+func getMetrics() *hostMetric {
+
+	_hostMetrics := new(hostMetric)
 	runtimeOS := runtime.GOOS
 
 	// memory
@@ -70,7 +118,6 @@ func getMetrics() string {
 	interfStat, err := net.Interfaces()
 	check(err)
 
-	_hostMetrics := new(hostMetrics)
 	_hostMetrics.Status = readInFile("status")
 	_hostMetrics.Os = runtimeOS
 	_hostMetrics.TotalMemory = strconv.FormatUint(vmStat.Total, 10)
@@ -88,7 +135,7 @@ func getMetrics() string {
 	_hostMetrics.HostIDUiid = hostStat.HostID
 
 	for _, cpupercent := range percentage {
-		_x := core{}
+		_x := cpuNode{}
 		_x.CPUIndexNumber = strconv.FormatInt(int64(cpuStat[0].CPU), 10)
 		_x.VendorID = cpuStat[0].VendorID
 		_x.Family = cpuStat[0].Family
@@ -111,54 +158,8 @@ func getMetrics() string {
 		}
 		_hostMetrics.Interfaces = append(_hostMetrics.Interfaces, _iterface)
 	}
-	urlsJSON, _ := json.Marshal(_hostMetrics)
-	//whriteInFile("specs.json", string(urlsJSON))
-	//println(string(_hostMetrics.Status))
 
-	ctx := context.Background()
-	opt := option.WithCredentialsFile("hostmetrics-cad87-firebase-adminsdk-pqrth-91458478e6.json")
-	config := &firebase.Config{
-		ProjectID:   "hostmetrics-cad87",
-		DatabaseURL: "https://hostmetrics-cad87.firebaseio.com",
-	}
-	app, err := firebase.NewApp(ctx, config, opt)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	client, err := app.Database(ctx)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	if err := client.NewRef("hosts/"+_hostMetrics.HostIDUiid).Set(ctx, _hostMetrics); err != nil {
-		log.Fatal(err)
-	}
-
-	return string(urlsJSON)
-
-}
-
-func checkExpire() {
-	for {
-		getMetrics()
-		time.Sleep(5000 * time.Millisecond)
-	}
-}
-
-func main() {
-	router := mux.NewRouter()
-	router.HandleFunc("/prosses/{text}", prosses).Name("prosses").Methods("GET")
-	router.HandleFunc("/whrite/{filename}/{text}", whrite).Name("whrite").Methods("GET")
-	router.HandleFunc("/read/{filename}", read).Name("read").Methods("GET")
-	router.HandleFunc("/metrics", metrics).Name("cpuMetrics").Methods("GET")
-	go checkExpire()
-	http.ListenAndServe(":8080", router)
-}
-
-func whriteInFile(filename string, dataToWhrite string) {
-	err := ioutil.WriteFile(filename, []byte(dataToWhrite), 0644)
-	check(err)
+	return _hostMetrics
 }
 
 func readInFile(filename string) string {
@@ -167,29 +168,29 @@ func readInFile(filename string) string {
 	return string(dat)
 }
 
+func whriteInFile(filename string, dataToWhrite string) bool {
+	err := ioutil.WriteFile(filename, []byte(dataToWhrite), 0644)
+	check(err)
+	return true
+}
+
+func prossesCia(value string) {
+	fmt.Println("ejecuta el .exe con el valor" + value)
+	time.Sleep(10000 * time.Millisecond)
+	whriteInFile("status", "online")
+}
+
+/*ERROR CHECK*/
+
 func check(e error) {
 	if e != nil {
 		panic(e)
 	}
 }
 
-type core struct {
-	CPUIndexNumber    string
-	VendorID          string
-	Family            string
-	ModelName         string
-	Speed             string
-	CPUUsedPercentage string
-}
+/*STRUCT MODEL*/
 
-type iterface struct {
-	InterfaceName      string
-	HardwareMacAddress string
-	Flags              []string
-	Ips                []string
-}
-
-type hostMetrics struct {
+type hostMetric struct {
 	Status                   string
 	Os                       string
 	TotalMemory              string
@@ -205,6 +206,22 @@ type hostMetrics struct {
 	NumbersOfProssesRunning  string
 	Platform                 string
 	HostIDUiid               string
-	Cores                    []core
+	Cores                    []cpuNode
 	Interfaces               []iterface
+}
+
+type cpuNode struct {
+	CPUIndexNumber    string
+	VendorID          string
+	Family            string
+	ModelName         string
+	Speed             string
+	CPUUsedPercentage string
+}
+
+type iterface struct {
+	InterfaceName      string
+	HardwareMacAddress string
+	Flags              []string
+	Ips                []string
 }

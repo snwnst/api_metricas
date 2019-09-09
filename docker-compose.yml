@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+
+  prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+    ports:
+      - '5400:80'
