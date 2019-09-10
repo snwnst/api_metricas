@@ -25,17 +25,16 @@ import (
 
 func main() {
 	go backgrounProsses()
-	fmt.Println(os.Getenv("GOPATH"))
 	log.Fatal(http.ListenAndServe(":"+getPortEnvaironment(), getRoutes()))
 }
 
-/*CONFIG*/
+/* CONFIG */
 
 func backgrounProsses() {
 	for {
 		_hostMetrics := getMetrics()
 		ctx := context.Background()
-		opt := option.WithCredentialsFile("firebase_key.json")
+		opt := option.WithCredentialsFile(getPath() + "firebase_key.json")
 		config := &firebase.Config{
 			ProjectID:   "hostmetrics-cad87",
 			DatabaseURL: "https://hostmetrics-cad87.firebaseio.com",
@@ -65,10 +64,10 @@ func getPortEnvaironment() string {
 	if port != "" {
 		return port
 	}
-	return "80"
+	return "8085"
 }
 
-/*CONTROLLERS*/
+/* CONTROLLERS */
 
 func whriteStatusNode(w http.ResponseWriter, r *http.Request) {
 	response, err := json.Marshal(whriteInFile(mux.Vars(r)["filename"], mux.Vars(r)["text"]))
@@ -87,35 +86,32 @@ func getMetricsFromNode(w http.ResponseWriter, r *http.Request) {
 }
 
 func prossesInNode(w http.ResponseWriter, r *http.Request) {
-	whriteInFile("status", "PROSESANDO: "+mux.Vars(r)["text"])
+	whriteInFile(getFilePath("status"), "PROSESANDO: "+mux.Vars(r)["text"])
 	go prossesCia(mux.Vars(r)["text"])
 }
 
-/*CORE*/
+/* CORE */
 
 func getMetrics() *hostMetric {
 
 	_hostMetrics := new(hostMetric)
 	runtimeOS := runtime.GOOS
 
-	// memory
 	vmStat, err := mem.VirtualMemory()
 	check(err)
 
 	diskStat, err := disk.Usage("/")
 	check(err)
 
-	// cpu - get CPU number of cores and speed
 	cpuStat, err := cpu.Info()
 	check(err)
+
 	percentage, err := cpu.Percent(0, true)
 	check(err)
 
-	// host or machine kernel, uptime, platform Info
 	hostStat, err := host.Info()
 	check(err)
 
-	// get interfaces MAC/hardware address
 	interfStat, err := net.Interfaces()
 	check(err)
 
@@ -164,24 +160,35 @@ func getMetrics() *hostMetric {
 }
 
 func readInFile(filename string) string {
-	dat, err := ioutil.ReadFile(filename)
+	dat, err := ioutil.ReadFile(getFilePath(filename))
 	check(err)
 	return string(dat)
 }
 
 func whriteInFile(filename string, dataToWhrite string) bool {
-	err := ioutil.WriteFile(filename, []byte(dataToWhrite), 0644)
+	err := ioutil.WriteFile(getFilePath(filename), []byte(dataToWhrite), 0644)
 	check(err)
 	return true
 }
 
 func prossesCia(value string) {
-	fmt.Println("ejecuta el .exe con el valor" + value)
+	fmt.Println("ejecuta el .exe con el valor " + value)
 	time.Sleep(10000 * time.Millisecond)
 	whriteInFile("status", "online")
 }
 
-/*ERROR CHECK*/
+func getPath() string {
+	dir, err := os.Getwd()
+	check(err)
+	return dir + "/"
+}
+
+func getFilePath(filename string) string {
+	filename = getPath() + filename + ".txt"
+	return string(filename)
+}
+
+/* ERROR CHECK */
 
 func check(e error) {
 	if e != nil {
@@ -189,7 +196,7 @@ func check(e error) {
 	}
 }
 
-/*STRUCT MODEL*/
+/* STRUCT MODEL */
 
 type hostMetric struct {
 	Status                   string

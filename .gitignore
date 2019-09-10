@@ -6,7 +6,6 @@
 *.dylib
 
 firebase_key.json
-status
 
 # Test binary, built with `go test -c`
 *.test
