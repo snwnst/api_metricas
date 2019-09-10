@@ -25,6 +25,7 @@ import (
 
 func main() {
 	go backgrounProsses()
+	fmt.Println(os.Getenv("GOPATH"))
 	log.Fatal(http.ListenAndServe(":"+getPortEnvaironment(), getRoutes()))
 }
 
