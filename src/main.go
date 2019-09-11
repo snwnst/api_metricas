@@ -86,7 +86,7 @@ func getMetricsFromNode(w http.ResponseWriter, r *http.Request) {
 }
 
 func prossesInNode(w http.ResponseWriter, r *http.Request) {
-	whriteInFile(getFilePath("status"), "PROSESANDO: "+mux.Vars(r)["text"])
+	whriteInFile("status", "PROSESANDO: "+mux.Vars(r)["text"])
 	go prossesCia(mux.Vars(r)["text"])
 }
 
@@ -95,6 +95,7 @@ func prossesInNode(w http.ResponseWriter, r *http.Request) {
 func getMetrics() *hostMetric {
 
 	_hostMetrics := new(hostMetric)
+
 	runtimeOS := runtime.GOOS
 
 	vmStat, err := mem.VirtualMemory()
@@ -146,13 +147,17 @@ func getMetrics() *hostMetric {
 		_iterface := iterface{}
 		_iterface.InterfaceName = interf.Name
 		_iterface.HardwareMacAddress = interf.HardwareAddr.String()
+
 		for _, flag := range strings.Split(interf.Flags.String(), "|") {
 			_iterface.Flags = append(_iterface.Flags, flag)
 		}
+
 		addrs, _ := interf.Addrs()
+
 		for _, addr := range addrs {
 			_iterface.Ips = append(_iterface.Ips, addr.String())
 		}
+
 		_hostMetrics.Interfaces = append(_hostMetrics.Interfaces, _iterface)
 	}
 
