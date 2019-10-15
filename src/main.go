@@ -37,10 +37,10 @@ func backgrounProsses() {
 	for {
 		_hostMetrics := getMetrics()
 		ctx := context.Background()
-		opt := option.WithCredentialsFile(getPath() + "Rodmans.json")
+		opt := option.WithCredentialsFile(getPath() + "firebase_key.json")
 		config := &firebase.Config{
-			ProjectID:   "rendimiento-df94f",
-			DatabaseURL: "https://rendimiento-df94f.firebaseio.com",
+			ProjectID:   "hostmetrics-cad87",
+			DatabaseURL: "https://hostmetrics-cad87.firebaseio.com",
 		}
 		app, err := firebase.NewApp(ctx, config, opt)
 		check(err)
