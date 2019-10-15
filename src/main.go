@@ -37,10 +37,10 @@ func backgrounProsses() {
 	for {
 		_hostMetrics := getMetrics()
 		ctx := context.Background()
-		opt := option.WithCredentialsFile(getPath() + "firebase_key.json")
+		opt := option.WithCredentialsFile(getPath() + "Rodmans.json")
 		config := &firebase.Config{
-			ProjectID:   "hostmetrics-cad87",
-			DatabaseURL: "https://hostmetrics-cad87.firebaseio.com",
+			ProjectID:   "rendimiento-df94f",
+			DatabaseURL: "https://rendimiento-df94f.firebaseio.com",
 		}
 		app, err := firebase.NewApp(ctx, config, opt)
 		check(err)
@@ -165,7 +165,7 @@ func getMetrics() *hostMetric {
 	}
 
 	if runtime.GOOS == "windows" {
-		cmd := exec.Command("TASKLIST /V /FO CSV")
+		cmd := exec.Command("tasklist.exe", "/v", "/FO", "csv")
 		var stdout, stderr bytes.Buffer
 		cmd.Stdout = &stdout
 		cmd.Stderr = &stderr
