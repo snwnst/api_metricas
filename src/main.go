@@ -10,6 +10,7 @@ import (
 	"net"
 	"net/http"
 	"os"
+	"os/exec"
 	"runtime"
 	"strconv"
 	"strings"
@@ -169,43 +170,38 @@ func getMetrics() *hostMetric {
 		_hostMetrics.Interfaces = append(_hostMetrics.Interfaces, _iterface)
 	}
 
-	println("ENTRA")
-
-	val := []prossesInfo{} // <---- This must be an array to match input
-	err = json.Unmarshal([]byte(getProsses()), &val)
-	check(err)
-	_hostMetrics.InfoProsses = val
+	cmd := exec.Command("ls", "-lah")
+	if runtime.GOOS == "windows" {
+		cmd = exec.Command("TASKLIST /V /FI \"STATUS eq running\" /FO LIST>prosses.txt")
+		err := cmd.Run()
+		val := []prossesInfo{}
+		err = json.Unmarshal([]byte(getProssesWindows()), &val)
+		check(err)
+		_hostMetrics.InfoProsses = val
+	}
 
 	return _hostMetrics
 }
 
-func getProsses() string {
+func getProssesWindows() string {
 	file, err := os.Open("prosses.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer file.Close()
-
 	jsnstring := "[{"
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-
 		if scanner.Text() != "" {
-
 			s := strings.Split(scanner.Text(), ":")
 			a1 := strings.Replace(s[0], " ", "", -1)
-
 			a2 := strings.Replace(s[1], "\"", "", -1)
 			a2 = strings.Replace(a2, " ", "", -1)
-
 			jsnstring = jsnstring + "\"" + a1 + "\":\"" + a2 + "\","
-
 		} else {
 			jsnstring = jsnstring + "},{"
 		}
-
 	}
-
 	jsnstring = strings.Replace(jsnstring, "�", "", -1) + "}"
 	jsnstring = strings.Replace(jsnstring, ",}", "}", -1)
 	jsnstring = strings.Replace(jsnstring, "\\a", "-", -1)
