@@ -1,430 +1,191 @@
-
-Nombre de imagen:   csrss.exe
-PID:                6836
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     5,280 KB
-Estado:             Running
-Nombre de usuario:  N/D
-Tiempo de CPU:      0:00:02
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   dwm.exe
-PID:                6832
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     64,808 KB
-Estado:             Running
-Nombre de usuario:  N/D
-Tiempo de CPU:      0:00:18
-T�tulo de ventana:  DWM Notification Window
-
-Nombre de imagen:   RtkAudUService64.exe
-PID:                1688
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     10,732 KB
-Estado:             Running
-Nombre de usuario:  N/D
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  RealtekAudioAdminBackgroundProcessClass
-
-Nombre de imagen:   unsecapp.exe
-PID:                4360
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     6,668 KB
-Estado:             Running
-Nombre de usuario:  N/D
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  OleMainThreadWndName
-
-Nombre de imagen:   sihost.exe
-PID:                5600
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     26,040 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:02
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   svchost.exe
-PID:                8164
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     23,948 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  Windows Push Notifications Platform
-
-Nombre de imagen:   taskhostw.exe
-PID:                2688
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     15,124 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  Task Host Window
-
-Nombre de imagen:   igfxEM.exe
-PID:                7360
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     22,180 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  The Event Manager Dashboard
-
-Nombre de imagen:   explorer.exe
-PID:                6336
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     93,384 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:05
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   smartscreen.exe
-PID:                5316
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     21,868 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  OleMainThreadWndName
-
-Nombre de imagen:   svchost.exe
-PID:                7768
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     16,224 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   ShellExperienceHost.exe
-PID:                6344
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     67,416 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:01
-T�tulo de ventana:  Inicio
-
-Nombre de imagen:   SearchUI.exe
-PID:                7860
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     168,392 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:03
-T�tulo de ventana:  Cortana
-
-Nombre de imagen:   RuntimeBroker.exe
-PID:                8288
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     28,668 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   LockApp.exe
-PID:                9568
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     40,272 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  Pantalla de bloqueo predeterminada de Windows
-
-Nombre de imagen:   RuntimeBroker.exe
-PID:                9632
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     28,512 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   SecurityHealthSystray.exe
-PID:                9872
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     8,248 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   RtkAudUService64.exe
-PID:                10064
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     9,732 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  RealtekAudioBackgroundProcessClass
-
-Nombre de imagen:   WavesSvc64.exe
-PID:                10124
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     12,312 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  WavesFXConnection_Capture
-
-Nombre de imagen:   PSUAMain.exe
-PID:                10212
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     6,688 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:03
-T�tulo de ventana:  TryBarAPPAV
-
-Nombre de imagen:   ApplicationFrameHost.exe
-PID:                1920
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     27,748 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  Configuraci�n
-
-Nombre de imagen:   MicrosoftEdge.exe
-PID:                7868
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     1,208 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  Microsoft Edge
-
-Nombre de imagen:   browser_broker.exe
-PID:                9424
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     7,732 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  OleMainThreadWndName
-
-Nombre de imagen:   dllhost.exe
-PID:                9016
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     11,564 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  OleMainThreadWndName
-
-Nombre de imagen:   MicrosoftEdgeSH.exe
-PID:                9784
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     4,248 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   MicrosoftEdgeCP.exe
-PID:                10168
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     22,196 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  Microsoft Edge
-
-Nombre de imagen:   SystemSettings.exe
-PID:                8052
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     60 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  Configuraci�n
-
-Nombre de imagen:   Microsoft.Photos.exe
-PID:                936
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     84,072 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:03
-T�tulo de ventana:  OleMainThreadWndName
-
-Nombre de imagen:   SettingSyncHost.exe
-PID:                10968
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     4,044 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   RuntimeBroker.exe
-PID:                8364
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     32,252 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   rdpclip.exe
-PID:                9888
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     9,716 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe
-PID:                4612
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     37,880 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  Microsoft Text Input Application
-
-Nombre de imagen:   ctfmon.exe
-PID:                8740
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     14,880 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   cmd.exe
-PID:                11196
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     3,860 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  S�mbolo del sistema - TASKLIST  /V /FI "STATUS eq running" /FO LIST
-
-Nombre de imagen:   conhost.exe
-PID:                9896
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     20,004 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:06
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   Code.exe
-PID:                7100
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     85,808 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:51
-T�tulo de ventana:  list.csv - Visual Studio Code
-
-Nombre de imagen:   Code.exe
-PID:                10316
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     110,180 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:18
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   Code.exe
-PID:                9396
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     13,172 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  crash service
-
-Nombre de imagen:   CodeSetup-stable-88f15d17dca836346e787762685a40bb5cce75a8.exe
-PID:                10020
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     10,248 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  InnoSetupLdrWindow
-
-Nombre de imagen:   chrome.exe
-PID:                10696
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     93,240 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:06
-T�tulo de ventana:  Converting CSV data to JSON with Go - Cihan Ozhan - Google Chrome
-
-Nombre de imagen:   chrome.exe
-PID:                8916
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     6,620 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   chrome.exe
-PID:                2628
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     8,856 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:00
-T�tulo de ventana:  N/D
-
-Nombre de imagen:   chrome.exe
-PID:                10432
-Nombre de sesi�n:   RDP-Tcp#10
-N�m. de sesi�n:     2
-Uso de memoria:     110,808 KB
-Estado:             Running
-Nombre de usuario:  HILCOTERRACOTA\arodriguez
-Tiempo de CPU:      0:00:02
-T�tulo de ventana:  N/D
+"Nombre de imagen","PID","Nombre de sesión","Núm. de sesión","Uso de memoria","Estado","Nombre de usuario","Tiempo de CPU","Título de ventana"
+"System Idle Process","0","Services","0","8 KB","Unknown","NT AUTHORITY\SYSTEM","116:30:00","N/D"
+"System","4","Services","0","764 KB","Unknown","N/D","0:07:18","N/D"
+"Secure System","56","Services","0","22,728 KB","Unknown","N/D","0:00:00","N/D"
+"Registry","112","Services","0","76,068 KB","Unknown","N/D","0:00:02","N/D"
+"smss.exe","832","Services","0","1,120 KB","Unknown","N/D","0:00:00","N/D"
+"csrss.exe","744","Services","0","4,816 KB","Unknown","N/D","0:00:01","N/D"
+"wininit.exe","612","Services","0","5,672 KB","Unknown","N/D","0:00:00","N/D"
+"services.exe","1064","Services","0","7,904 KB","Unknown","N/D","0:00:06","N/D"
+"LsaIso.exe","1084","Services","0","2,488 KB","Unknown","N/D","0:00:00","N/D"
+"lsass.exe","1092","Services","0","17,020 KB","Unknown","N/D","0:00:06","N/D"
+"svchost.exe","1284","Services","0","3,660 KB","Unknown","N/D","0:00:00","N/D"
+"fontdrvhost.exe","1344","Services","0","2,788 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","1364","Services","0","25,192 KB","Unknown","N/D","0:00:05","N/D"
+"svchost.exe","1432","Services","0","12,628 KB","Unknown","N/D","0:00:07","N/D"
+"svchost.exe","1476","Services","0","9,600 KB","Unknown","N/D","0:00:02","N/D"
+"svchost.exe","1668","Services","0","55,556 KB","Unknown","N/D","0:00:37","N/D"
+"svchost.exe","1788","Services","0","8,956 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","1796","Services","0","4,840 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","1828","Services","0","5,820 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","1836","Services","0","6,324 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","1844","Services","0","13,320 KB","Unknown","N/D","0:00:01","N/D"
+"svchost.exe","1952","Services","0","6,996 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","1996","Services","0","5,460 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2008","Services","0","7,312 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2040","Services","0","5,400 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","608","Services","0","7,992 KB","Unknown","N/D","0:00:15","N/D"
+"svchost.exe","1500","Services","0","11,212 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2092","Services","0","10,048 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2140","Services","0","7,132 KB","Unknown","N/D","0:00:00","N/D"
+"igfxCUIService.exe","2212","Services","0","6,892 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2352","Services","0","13,544 KB","Unknown","N/D","0:00:05","N/D"
+"svchost.exe","2376","Services","0","13,252 KB","Unknown","N/D","0:00:01","N/D"
+"svchost.exe","2464","Services","0","8,040 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2484","Services","0","8,560 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2632","Services","0","6,680 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2668","Services","0","10,832 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2720","Services","0","8,632 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2768","Services","0","8,280 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2824","Services","0","6,896 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2864","Services","0","9,060 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2880","Services","0","15,036 KB","Unknown","N/D","0:00:12","N/D"
+"svchost.exe","3060","Services","0","9,908 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","3244","Services","0","8,092 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","3324","Services","0","6,380 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","3416","Services","0","8,832 KB","Unknown","N/D","0:00:07","N/D"
+"svchost.exe","3600","Services","0","6,704 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","3656","Services","0","5,908 KB","Unknown","N/D","0:00:00","N/D"
+"dasHost.exe","3740","Services","0","11,256 KB","Unknown","N/D","0:00:06","N/D"
+"svchost.exe","3796","Services","0","7,012 KB","Unknown","N/D","0:00:08","N/D"
+"svchost.exe","3988","Services","0","6,424 KB","Unknown","N/D","0:00:00","N/D"
+"dasHost.exe","4084","Services","0","3,504 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","3264","Services","0","5,276 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","3284","Services","0","83,980 KB","Unknown","N/D","0:02:50","N/D"
+"Memory Compression","3544","Services","0","345,740 KB","Unknown","N/D","0:00:05","N/D"
+"svchost.exe","3240","Services","0","7,664 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","4140","Services","0","11,640 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","4220","Services","0","13,308 KB","Unknown","N/D","0:00:05","N/D"
+"svchost.exe","4240","Services","0","8,120 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","4248","Services","0","5,612 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","4320","Services","0","12,668 KB","Unknown","N/D","0:00:00","N/D"
+"spoolsv.exe","4396","Services","0","25,028 KB","Unknown","N/D","0:00:07","N/D"
+"IntelCpHDCPSvc.exe","4452","Services","0","5,904 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","4460","Services","0","8,384 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","4468","Services","0","11,868 KB","Unknown","N/D","0:00:01","N/D"
+"svchost.exe","4480","Services","0","25,532 KB","Unknown","N/D","0:00:03","N/D"
+"svchost.exe","4532","Services","0","24,140 KB","Unknown","N/D","0:00:05","N/D"
+"AgentSvc.exe","4616","Services","0","39,032 KB","Unknown","N/D","0:02:17","N/D"
+"svchost.exe","4652","Services","0","8,260 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","4688","Services","0","5,936 KB","Unknown","N/D","0:00:00","N/D"
+"RtkAudUService64.exe","4700","Services","0","7,780 KB","Unknown","N/D","0:06:03","N/D"
+"PSANHost.exe","4704","Services","0","21,356 KB","Unknown","N/D","0:02:29","N/D"
+"RstMwService.exe","4748","Services","0","5,464 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","4788","Services","0","10,548 KB","Unknown","N/D","0:00:00","N/D"
+"sqlwriter.exe","4796","Services","0","6,380 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","4804","Services","0","5,488 KB","Unknown","N/D","0:00:00","N/D"
+"IntelCpHeciSvc.exe","4964","Services","0","5,468 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","4984","Services","0","18,828 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","4992","Services","0","4,948 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","5000","Services","0","9,644 KB","Unknown","N/D","0:00:00","N/D"
+"WavesSysSvc64.exe","5028","Services","0","7,728 KB","Unknown","N/D","0:00:00","N/D"
+"vmms.exe","5036","Services","0","22,100 KB","Unknown","N/D","0:00:00","N/D"
+"jenkins.exe","4296","Services","0","16,248 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","5284","Services","0","10,672 KB","Unknown","N/D","0:00:00","N/D"
+"sqlbrowser.exe","5704","Services","0","6,316 KB","Unknown","N/D","0:00:00","N/D"
+"sqlceip.exe","5828","Services","0","40,484 KB","Unknown","N/D","0:00:01","N/D"
+"sqlservr.exe","5836","Services","0","88,180 KB","Unknown","N/D","0:11:38","N/D"
+"vmcompute.exe","6044","Services","0","6,036 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","6248","Services","0","10,016 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","6296","Services","0","6,216 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","7136","Services","0","8,504 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","6624","Services","0","9,316 KB","Unknown","N/D","0:00:00","N/D"
+"SecurityHealthService.exe","7216","Services","0","12,312 KB","Unknown","N/D","0:00:00","N/D"
+"java.exe","7332","Services","0","116,168 KB","Unknown","N/D","0:01:24","N/D"
+"conhost.exe","7464","Services","0","6,392 KB","Unknown","N/D","0:00:00","N/D"
+"Launchpad.exe","6204","Services","0","15,308 KB","Unknown","N/D","0:00:00","N/D"
+"fdlauncher.exe","5588","Services","0","4,292 KB","Unknown","N/D","0:00:00","N/D"
+"fdhost.exe","5676","Services","0","5,312 KB","Unknown","N/D","0:00:00","N/D"
+"conhost.exe","5688","Services","0","4,428 KB","Unknown","N/D","0:00:00","N/D"
+"SearchIndexer.exe","7956","Services","0","38,720 KB","Unknown","N/D","0:00:02","N/D"
+"PSUAService.exe","1304","Services","0","4,124 KB","Unknown","N/D","0:00:10","N/D"
+"svchost.exe","4972","Services","0","16,080 KB","Unknown","N/D","0:00:05","N/D"
+"svchost.exe","5104","Services","0","7,780 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","4836","Services","0","17,108 KB","Unknown","N/D","0:00:00","N/D"
+"SgrmBroker.exe","8172","Services","0","5,720 KB","Unknown","N/D","0:00:03","N/D"
+"GoogleCrashHandler.exe","7008","Services","0","10,432 KB","Unknown","N/D","0:00:00","N/D"
+"GoogleCrashHandler64.exe","1948","Services","0","144 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","2976","Services","0","20,500 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","6532","Services","0","6,900 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","3888","Services","0","14,472 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","5700","Services","0","8,704 KB","Unknown","N/D","0:00:00","N/D"
+"svchost.exe","340","Services","0","17,480 KB","Unknown","N/D","0:00:00","N/D"
+"csrss.exe","6836","RDP-Tcp#12","2","4,584 KB","Running","N/D","0:00:04","N/D"
+"winlogon.exe","3280","RDP-Tcp#12","2","7,772 KB","Unknown","N/D","0:00:00","N/D"
+"fontdrvhost.exe","4012","RDP-Tcp#12","2","7,108 KB","Unknown","N/D","0:00:00","N/D"
+"dwm.exe","6832","RDP-Tcp#12","2","53,884 KB","Running","N/D","0:00:24","DWM Notification Window"
+"svchost.exe","7764","Services","0","5,368 KB","Unknown","N/D","0:00:00","N/D"
+"RtkAudUService64.exe","1688","RDP-Tcp#12","2","10,180 KB","Running","N/D","0:00:00","RealtekAudioAdminBackgroundProcessClass"
+"unsecapp.exe","4360","RDP-Tcp#12","2","6,728 KB","Running","N/D","0:00:00","OleMainThreadWndName"
+"WmiPrvSE.exe","4408","Services","0","12,436 KB","Unknown","N/D","0:00:04","N/D"
+"sihost.exe","5600","RDP-Tcp#12","2","25,060 KB","Running","HILCOTERRACOTA\arodriguez","0:00:02","N/D"
+"svchost.exe","7388","RDP-Tcp#12","2","23,520 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"svchost.exe","8164","RDP-Tcp#12","2","23,392 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","Windows Push Notifications Platform"
+"taskhostw.exe","2688","RDP-Tcp#12","2","14,560 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","Task Host Window"
+"igfxEM.exe","7360","RDP-Tcp#12","2","21,020 KB","Running","HILCOTERRACOTA\arodriguez","0:00:01","The Event Manager Dashboard"
+"svchost.exe","3548","Services","0","7,048 KB","Unknown","N/D","0:00:00","N/D"
+"explorer.exe","6336","RDP-Tcp#12","2","90,000 KB","Running","HILCOTERRACOTA\arodriguez","0:00:09","N/D"
+"smartscreen.exe","5316","RDP-Tcp#12","2","21,728 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","OleMainThreadWndName"
+"svchost.exe","7768","RDP-Tcp#12","2","16,204 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"ShellExperienceHost.exe","6344","RDP-Tcp#12","2","67,380 KB","Running","HILCOTERRACOTA\arodriguez","0:00:01","Inicio"
+"SearchUI.exe","7860","RDP-Tcp#12","2","164,876 KB","Running","HILCOTERRACOTA\arodriguez","0:00:04","Cortana"
+"RuntimeBroker.exe","7628","RDP-Tcp#12","2","19,628 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"RuntimeBroker.exe","8288","RDP-Tcp#12","2","27,328 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"svchost.exe","8628","Services","0","10,376 KB","Unknown","N/D","0:00:00","N/D"
+"RuntimeBroker.exe","9044","RDP-Tcp#12","2","13,772 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:01","N/D"
+"svchost.exe","9316","Services","0","10,152 KB","Unknown","N/D","0:00:00","N/D"
+"LockApp.exe","9568","RDP-Tcp#12","2","40,364 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","Pantalla de bloqueo predeterminada de Windows"
+"RuntimeBroker.exe","9632","RDP-Tcp#12","2","28,424 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"svchost.exe","9776","Services","0","10,296 KB","Unknown","N/D","0:00:00","N/D"
+"SecurityHealthSystray.exe","9872","RDP-Tcp#12","2","7,632 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"RtkAudUService64.exe","10064","RDP-Tcp#12","2","9,224 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","RealtekAudioBackgroundProcessClass"
+"WavesSvc64.exe","10124","RDP-Tcp#12","2","11,592 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","WavesFXConnection_Capture"
+"PSUAMain.exe","10212","RDP-Tcp#12","2","6,684 KB","Running","HILCOTERRACOTA\arodriguez","0:00:12","TryBarAPPAV"
+"ApplicationFrameHost.exe","1920","RDP-Tcp#12","2","24,668 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","Configuración"
+"MicrosoftEdge.exe","7868","RDP-Tcp#12","2","1,504 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","Microsoft Edge"
+"browser_broker.exe","9424","RDP-Tcp#12","2","7,420 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","OleMainThreadWndName"
+"dllhost.exe","9016","RDP-Tcp#12","2","11,244 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","OleMainThreadWndName"
+"RuntimeBroker.exe","1860","RDP-Tcp#12","2","6,580 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"MicrosoftEdgeSH.exe","9784","RDP-Tcp#12","2","4,336 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"MicrosoftEdgeCP.exe","10168","RDP-Tcp#12","2","22,340 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","Microsoft Edge"
+"SystemSettings.exe","8052","RDP-Tcp#12","2","196 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","Configuración"
+"svchost.exe","9832","RDP-Tcp#12","2","10,480 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"Microsoft.Photos.exe","936","RDP-Tcp#12","2","67,368 KB","Running","HILCOTERRACOTA\arodriguez","0:00:04","OleMainThreadWndName"
+"SettingSyncHost.exe","10968","RDP-Tcp#12","2","3,708 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"RuntimeBroker.exe","8364","RDP-Tcp#12","2","31,840 KB","Running","HILCOTERRACOTA\arodriguez","0:00:02","N/D"
+"csrss.exe","9656","Console","3","3,920 KB","Unknown","N/D","0:00:00","N/D"
+"winlogon.exe","4404","Console","3","6,924 KB","Unknown","N/D","0:00:00","N/D"
+"LogonUI.exe","8020","Console","3","44,720 KB","Unknown","N/D","0:00:04","N/D"
+"fontdrvhost.exe","1768","Console","3","2,784 KB","Unknown","N/D","0:00:00","N/D"
+"dwm.exe","10612","Console","3","23,864 KB","Unknown","N/D","0:00:00","N/D"
+"rdpclip.exe","9888","RDP-Tcp#12","2","10,216 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe","4612","RDP-Tcp#12","2","38,152 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","Microsoft Text Input Application"
+"ctfmon.exe","8740","RDP-Tcp#12","2","14,448 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"cmd.exe","11196","RDP-Tcp#12","2","3,920 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","Símbolo del sistema - TASKLIST  /V /FO CSV"
+"conhost.exe","9896","RDP-Tcp#12","2","13,900 KB","Running","HILCOTERRACOTA\arodriguez","0:00:10","N/D"
+"svchost.exe","5092","Services","0","5,608 KB","Unknown","N/D","0:00:00","N/D"
+"Code.exe","7100","RDP-Tcp#12","2","67,856 KB","Running","HILCOTERRACOTA\arodriguez","0:00:59","prosses.txt - Visual Studio Code"
+"Code.exe","10316","RDP-Tcp#12","2","37,576 KB","Running","HILCOTERRACOTA\arodriguez","0:00:22","N/D"
+"Code.exe","8488","RDP-Tcp#12","2","64,176 KB","Unknown","HILCOTERRACOTA\arodriguez","0:01:20","N/D"
+"Code.exe","9396","RDP-Tcp#12","2","10,396 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","crash service"
+"Code.exe","5056","RDP-Tcp#12","2","50,648 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:02","N/D"
+"Code.exe","2396","RDP-Tcp#12","2","30,716 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:02","N/D"
+"Code.exe","11212","RDP-Tcp#12","2","21,896 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"CodeSetup-stable-88f15d17dca836346e787762685a40bb5cce75a8.exe","10020","RDP-Tcp#12","2","6,668 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","InnoSetupLdrWindow"
+"CodeSetup-stable-88f15d17dca836346e787762685a40bb5cce75a8.tmp","3044","RDP-Tcp#12","2","19,548 KB","Not Responding","HILCOTERRACOTA\arodriguez","0:00:08","Instalar"
+"chrome.exe","10696","RDP-Tcp#12","2","80,508 KB","Running","HILCOTERRACOTA\arodriguez","0:00:10","Converting CSV data to JSON with Go – Cihan Ozhan - Google Chrome"
+"chrome.exe","8916","RDP-Tcp#12","2","6,468 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"chrome.exe","2628","RDP-Tcp#12","2","7,884 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"chrome.exe","10432","RDP-Tcp#12","2","35,900 KB","Running","HILCOTERRACOTA\arodriguez","0:00:02","N/D"
+"chrome.exe","4124","RDP-Tcp#12","2","23,340 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:01","N/D"
+"chrome.exe","8560","RDP-Tcp#12","2","43,168 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:05","N/D"
+"chrome.exe","8828","RDP-Tcp#12","2","24,500 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:01","N/D"
+"chrome.exe","2148","RDP-Tcp#12","2","15,528 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"YourPhone.exe","1576","RDP-Tcp#12","2","60 KB","Running","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"RuntimeBroker.exe","2996","RDP-Tcp#12","2","6,496 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"svchost.exe","10280","Services","0","6,256 KB","Unknown","N/D","0:00:13","N/D"
+"svchost.exe","4772","Services","0","5,780 KB","Unknown","N/D","0:00:00","N/D"
+"w3wp.exe","1204","Services","0","65,412 KB","Unknown","N/D","0:00:00","N/D"
+"conhost.exe","3660","Services","0","12,072 KB","Unknown","N/D","0:00:00","N/D"
+"tasklist.exe","1572","RDP-Tcp#12","2","8,376 KB","Unknown","HILCOTERRACOTA\arodriguez","0:00:00","N/D"
+"WmiPrvSE.exe","8516","Services","0","8,472 KB","Unknown","N/D","0:00:00","N/D"

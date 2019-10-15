@@ -1,8 +1,9 @@
 package main
 
 import (
-	"bufio"
+	"bytes"
 	"context"
+	"encoding/csv"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -58,7 +59,6 @@ func getRoutes() *mux.Router {
 	router.HandleFunc("/whrite/{filename}/{text}", whriteStatusNode).Name("whriteInFile").Methods("GET")
 	router.HandleFunc("/read/{filename}", readStatusNode).Name("readInFile").Methods("GET")
 	router.HandleFunc("/metrics", getMetricsFromNode).Name("getMetricsFromNode").Methods("GET")
-	router.HandleFunc("/prosses", getProssesFromNode).Name("getProssesFromNode").Methods("GET")
 	return router
 }
 
@@ -84,12 +84,6 @@ func readStatusNode(w http.ResponseWriter, r *http.Request) {
 
 func getMetricsFromNode(w http.ResponseWriter, r *http.Request) {
 	response, err := json.Marshal(getMetrics())
-	check(err)
-	fmt.Fprintf(w, string(response))
-}
-
-func getProssesFromNode(w http.ResponseWriter, r *http.Request) {
-	response, err := json.Marshal(getProsses())
 	check(err)
 	fmt.Fprintf(w, string(response))
 }
@@ -170,48 +164,51 @@ func getMetrics() *hostMetric {
 		_hostMetrics.Interfaces = append(_hostMetrics.Interfaces, _iterface)
 	}
 
-	cmd := exec.Command("ls", "-lah")
 	if runtime.GOOS == "windows" {
-		cmd = exec.Command("TASKLIST /V /FI \"STATUS eq running\" /FO LIST>prosses.txt")
+		cmd := exec.Command("TASKLIST /V /FO CSV")
+		var stdout, stderr bytes.Buffer
+		cmd.Stdout = &stdout
+		cmd.Stderr = &stderr
 		err := cmd.Run()
-		val := []prossesInfo{}
-		err = json.Unmarshal([]byte(getProssesWindows()), &val)
 		check(err)
-		_hostMetrics.InfoProsses = val
+		outStr := string(stdout.Bytes())
+		whriteInFile("prosses", outStr)
+	} else {
+		cmd := exec.Command("top")
+		var stdout, stderr bytes.Buffer
+		cmd.Stdout = &stdout
+		cmd.Stderr = &stderr
+		err := cmd.Run()
+		check(err)
+		outStr, errStr := string(stdout.Bytes()), string(stderr.Bytes())
+		whriteInFile("ejemplo", outStr)
+		fmt.Printf("out:\n%s\nerr:\n%s\n", outStr, errStr)
+	}
+
+	lines, err := readCsv("prosses.txt")
+	check(err)
+
+	frist := false
+	for _, line := range lines {
+		if frist {
+			_prossesInfo := prossesInfo{}
+			_prossesInfo.Nombredeimagen = line[0]
+			_prossesInfo.PID = line[1]
+			_prossesInfo.Nombredesesin = line[2]
+			_prossesInfo.Nmdesesin = line[3]
+			_prossesInfo.Usodememoria = line[4]
+			_prossesInfo.Estado = line[5]
+			_prossesInfo.Nombredeusuario = line[6]
+			_prossesInfo.TiempodeCPU = line[7]
+			_prossesInfo.Ttulodeventana = line[8]
+
+			_hostMetrics.InfoProsses = append(_hostMetrics.InfoProsses, _prossesInfo)
+		} else {
+			frist = true
+		}
 	}
 
 	return _hostMetrics
-}
-
-func getProssesWindows() string {
-	file, err := os.Open("prosses.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
-	jsnstring := "[{"
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		if scanner.Text() != "" {
-			s := strings.Split(scanner.Text(), ":")
-			a1 := strings.Replace(s[0], " ", "", -1)
-			a2 := strings.Replace(s[1], "\"", "", -1)
-			a2 = strings.Replace(a2, " ", "", -1)
-			jsnstring = jsnstring + "\"" + a1 + "\":\"" + a2 + "\","
-		} else {
-			jsnstring = jsnstring + "},{"
-		}
-	}
-	jsnstring = strings.Replace(jsnstring, "�", "", -1) + "}"
-	jsnstring = strings.Replace(jsnstring, ",}", "}", -1)
-	jsnstring = strings.Replace(jsnstring, "\\a", "-", -1)
-	jsnstring = strings.Replace(jsnstring, "{},", "", -1) + "]"
-
-	if err := scanner.Err(); err != nil {
-		log.Fatal(err)
-	}
-
-	return jsnstring
 }
 
 func readInFile(filename string) string {
@@ -224,6 +221,19 @@ func whriteInFile(filename string, dataToWhrite string) bool {
 	err := ioutil.WriteFile(getFilePath(filename), []byte(dataToWhrite), 0644)
 	check(err)
 	return true
+}
+
+func readCsv(filename string) ([][]string, error) {
+	f, err := os.Open(filename)
+	if err != nil {
+		return [][]string{}, err
+	}
+	defer f.Close()
+	lines, err := csv.NewReader(f).ReadAll()
+	if err != nil {
+		return [][]string{}, err
+	}
+	return lines, nil
 }
 
 func prossesCia(value string) {
@@ -294,7 +304,7 @@ type prossesInfo struct {
 	Nombredeimagen  string
 	PID             string
 	Nombredesesin   string
-	Nm              string
+	Nmdesesin       string
 	Usodememoria    string
 	Estado          string
 	Nombredeusuario string
