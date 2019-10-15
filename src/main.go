@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"context"
 	"encoding/json"
 	"fmt"
@@ -56,6 +57,7 @@ func getRoutes() *mux.Router {
 	router.HandleFunc("/whrite/{filename}/{text}", whriteStatusNode).Name("whriteInFile").Methods("GET")
 	router.HandleFunc("/read/{filename}", readStatusNode).Name("readInFile").Methods("GET")
 	router.HandleFunc("/metrics", getMetricsFromNode).Name("getMetricsFromNode").Methods("GET")
+	router.HandleFunc("/prosses", getProssesFromNode).Name("getProssesFromNode").Methods("GET")
 	return router
 }
 
@@ -81,6 +83,12 @@ func readStatusNode(w http.ResponseWriter, r *http.Request) {
 
 func getMetricsFromNode(w http.ResponseWriter, r *http.Request) {
 	response, err := json.Marshal(getMetrics())
+	check(err)
+	fmt.Fprintf(w, string(response))
+}
+
+func getProssesFromNode(w http.ResponseWriter, r *http.Request) {
+	response, err := json.Marshal(getProsses())
 	check(err)
 	fmt.Fprintf(w, string(response))
 }
@@ -161,7 +169,53 @@ func getMetrics() *hostMetric {
 		_hostMetrics.Interfaces = append(_hostMetrics.Interfaces, _iterface)
 	}
 
+	println("ENTRA")
+
+	val := []prossesInfo{} // <---- This must be an array to match input
+	err = json.Unmarshal([]byte(getProsses()), &val)
+	check(err)
+	_hostMetrics.InfoProsses = val
+
 	return _hostMetrics
+}
+
+func getProsses() string {
+	file, err := os.Open("prosses.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	jsnstring := "[{"
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+
+		if scanner.Text() != "" {
+
+			s := strings.Split(scanner.Text(), ":")
+			a1 := strings.Replace(s[0], " ", "", -1)
+
+			a2 := strings.Replace(s[1], "\"", "", -1)
+			a2 = strings.Replace(a2, " ", "", -1)
+
+			jsnstring = jsnstring + "\"" + a1 + "\":\"" + a2 + "\","
+
+		} else {
+			jsnstring = jsnstring + "},{"
+		}
+
+	}
+
+	jsnstring = strings.Replace(jsnstring, "�", "", -1) + "}"
+	jsnstring = strings.Replace(jsnstring, ",}", "}", -1)
+	jsnstring = strings.Replace(jsnstring, "\\a", "-", -1)
+	jsnstring = strings.Replace(jsnstring, "{},", "", -1) + "]"
+
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
+
+	return jsnstring
 }
 
 func readInFile(filename string) string {
@@ -221,6 +275,7 @@ type hostMetric struct {
 	HostIDUiid               string
 	Cores                    []cpuNode
 	Interfaces               []iterface
+	InfoProsses              []prossesInfo
 }
 
 type cpuNode struct {
@@ -237,4 +292,16 @@ type iterface struct {
 	HardwareMacAddress string
 	Flags              []string
 	Ips                []string
+}
+
+type prossesInfo struct {
+	Nombredeimagen  string
+	PID             string
+	Nombredesesin   string
+	Nm              string
+	Usodememoria    string
+	Estado          string
+	Nombredeusuario string
+	TiempodeCPU     string
+	Ttulodeventana  string
 }

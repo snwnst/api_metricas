@@ -1,0 +1,430 @@
+
+Nombre de imagen:   csrss.exe
+PID:                6836
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     5,280 KB
+Estado:             Running
+Nombre de usuario:  N/D
+Tiempo de CPU:      0:00:02
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   dwm.exe
+PID:                6832
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     64,808 KB
+Estado:             Running
+Nombre de usuario:  N/D
+Tiempo de CPU:      0:00:18
+T�tulo de ventana:  DWM Notification Window
+
+Nombre de imagen:   RtkAudUService64.exe
+PID:                1688
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     10,732 KB
+Estado:             Running
+Nombre de usuario:  N/D
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  RealtekAudioAdminBackgroundProcessClass
+
+Nombre de imagen:   unsecapp.exe
+PID:                4360
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     6,668 KB
+Estado:             Running
+Nombre de usuario:  N/D
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  OleMainThreadWndName
+
+Nombre de imagen:   sihost.exe
+PID:                5600
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     26,040 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:02
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   svchost.exe
+PID:                8164
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     23,948 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  Windows Push Notifications Platform
+
+Nombre de imagen:   taskhostw.exe
+PID:                2688
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     15,124 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  Task Host Window
+
+Nombre de imagen:   igfxEM.exe
+PID:                7360
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     22,180 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  The Event Manager Dashboard
+
+Nombre de imagen:   explorer.exe
+PID:                6336
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     93,384 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:05
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   smartscreen.exe
+PID:                5316
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     21,868 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  OleMainThreadWndName
+
+Nombre de imagen:   svchost.exe
+PID:                7768
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     16,224 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   ShellExperienceHost.exe
+PID:                6344
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     67,416 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:01
+T�tulo de ventana:  Inicio
+
+Nombre de imagen:   SearchUI.exe
+PID:                7860
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     168,392 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:03
+T�tulo de ventana:  Cortana
+
+Nombre de imagen:   RuntimeBroker.exe
+PID:                8288
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     28,668 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   LockApp.exe
+PID:                9568
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     40,272 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  Pantalla de bloqueo predeterminada de Windows
+
+Nombre de imagen:   RuntimeBroker.exe
+PID:                9632
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     28,512 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   SecurityHealthSystray.exe
+PID:                9872
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     8,248 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   RtkAudUService64.exe
+PID:                10064
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     9,732 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  RealtekAudioBackgroundProcessClass
+
+Nombre de imagen:   WavesSvc64.exe
+PID:                10124
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     12,312 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  WavesFXConnection_Capture
+
+Nombre de imagen:   PSUAMain.exe
+PID:                10212
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     6,688 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:03
+T�tulo de ventana:  TryBarAPPAV
+
+Nombre de imagen:   ApplicationFrameHost.exe
+PID:                1920
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     27,748 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  Configuraci�n
+
+Nombre de imagen:   MicrosoftEdge.exe
+PID:                7868
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     1,208 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  Microsoft Edge
+
+Nombre de imagen:   browser_broker.exe
+PID:                9424
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     7,732 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  OleMainThreadWndName
+
+Nombre de imagen:   dllhost.exe
+PID:                9016
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     11,564 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  OleMainThreadWndName
+
+Nombre de imagen:   MicrosoftEdgeSH.exe
+PID:                9784
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     4,248 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   MicrosoftEdgeCP.exe
+PID:                10168
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     22,196 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  Microsoft Edge
+
+Nombre de imagen:   SystemSettings.exe
+PID:                8052
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     60 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  Configuraci�n
+
+Nombre de imagen:   Microsoft.Photos.exe
+PID:                936
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     84,072 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:03
+T�tulo de ventana:  OleMainThreadWndName
+
+Nombre de imagen:   SettingSyncHost.exe
+PID:                10968
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     4,044 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   RuntimeBroker.exe
+PID:                8364
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     32,252 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   rdpclip.exe
+PID:                9888
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     9,716 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe
+PID:                4612
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     37,880 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  Microsoft Text Input Application
+
+Nombre de imagen:   ctfmon.exe
+PID:                8740
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     14,880 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   cmd.exe
+PID:                11196
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     3,860 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  S�mbolo del sistema - TASKLIST  /V /FI "STATUS eq running" /FO LIST
+
+Nombre de imagen:   conhost.exe
+PID:                9896
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     20,004 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:06
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   Code.exe
+PID:                7100
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     85,808 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:51
+T�tulo de ventana:  list.csv - Visual Studio Code
+
+Nombre de imagen:   Code.exe
+PID:                10316
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     110,180 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:18
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   Code.exe
+PID:                9396
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     13,172 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  crash service
+
+Nombre de imagen:   CodeSetup-stable-88f15d17dca836346e787762685a40bb5cce75a8.exe
+PID:                10020
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     10,248 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  InnoSetupLdrWindow
+
+Nombre de imagen:   chrome.exe
+PID:                10696
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     93,240 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:06
+T�tulo de ventana:  Converting CSV data to JSON with Go - Cihan Ozhan - Google Chrome
+
+Nombre de imagen:   chrome.exe
+PID:                8916
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     6,620 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   chrome.exe
+PID:                2628
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     8,856 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:00
+T�tulo de ventana:  N/D
+
+Nombre de imagen:   chrome.exe
+PID:                10432
+Nombre de sesi�n:   RDP-Tcp#10
+N�m. de sesi�n:     2
+Uso de memoria:     110,808 KB
+Estado:             Running
+Nombre de usuario:  HILCOTERRACOTA\arodriguez
+Tiempo de CPU:      0:00:02
+T�tulo de ventana:  N/D
