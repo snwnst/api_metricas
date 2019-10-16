@@ -1,8 +1,0 @@
-total 80
-drwxr-xr-x  7 snwnst  staff   224B Oct 15 17:24 .
-drwxr-xr-x  8 snwnst  staff   256B Sep 16 18:47 ..
--rw-r--r--  1 snwnst  staff   411B Oct 15 17:26 ejemplo.txt
--rw-r--r--  1 snwnst  staff   2.3K Oct 15 12:13 firebase_key.json
--rw-r--r--  1 snwnst  staff   7.8K Oct 15 17:26 main.go
--rw-r--r--  1 snwnst  staff    17K Oct 15 17:19 prosses.txt
--rw-r--r--  1 snwnst  staff     6B Sep 16 18:47 status.txt
