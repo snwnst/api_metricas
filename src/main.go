@@ -39,14 +39,14 @@ func backgrounProsses() {
 		ctx := context.Background()
 		opt := option.WithCredentialsFile(getPath() + "firebase_key.json")
 		config := &firebase.Config{
-			ProjectID:   "hostmetrics-cad87",
-			DatabaseURL: "https://hostmetrics-cad87.firebaseio.com",
+			ProjectID:   "ht-metricas",
+			DatabaseURL: "https://ht-metricas.firebaseio.com/",
 		}
 		app, err := firebase.NewApp(ctx, config, opt)
 		check(err)
 		client, err := app.Database(ctx)
 		check(err)
-		if err := client.NewRef("hosts/"+_hostMetrics.HostIDUiid).Set(ctx, _hostMetrics); err != nil {
+		if err := client.NewRef("info_pc/"+_hostMetrics.HostIDUiid).Set(ctx, _hostMetrics); err != nil {
 			check(err)
 		}
 		time.Sleep(5000 * time.Millisecond)
@@ -173,39 +173,38 @@ func getMetrics() *hostMetric {
 		check(err)
 		outStr := string(stdout.Bytes())
 		whriteInFile("prosses", outStr)
+
+		lines, err := readCsv("prosses.txt")
+		check(err)
+
+		frist := false
+		for _, line := range lines {
+			if frist {
+				_prossesInfo := prossesInfo{}
+				_prossesInfo.Nombredeimagen = line[0]
+				_prossesInfo.PID = line[1]
+				_prossesInfo.Nombredesesin = line[2]
+				_prossesInfo.Nmdesesin = line[3]
+				_prossesInfo.Usodememoria = line[4]
+				_prossesInfo.Estado = line[5]
+				_prossesInfo.Nombredeusuario = line[6]
+				_prossesInfo.TiempodeCPU = line[7]
+				_prossesInfo.Ttulodeventana = line[8]
+				_hostMetrics.InfoProsses = append(_hostMetrics.InfoProsses, _prossesInfo)
+			} else {
+				frist = true
+			}
+		}
+
 	} else {
-		cmd := exec.Command("top")
+		cmd := exec.Command("top", "-l", "1")
 		var stdout, stderr bytes.Buffer
 		cmd.Stdout = &stdout
 		cmd.Stderr = &stderr
 		err := cmd.Run()
 		check(err)
-		outStr, errStr := string(stdout.Bytes()), string(stderr.Bytes())
-		whriteInFile("ejemplo", outStr)
-		fmt.Printf("out:\n%s\nerr:\n%s\n", outStr, errStr)
-	}
-
-	lines, err := readCsv("prosses.txt")
-	check(err)
-
-	frist := false
-	for _, line := range lines {
-		if frist {
-			_prossesInfo := prossesInfo{}
-			_prossesInfo.Nombredeimagen = line[0]
-			_prossesInfo.PID = line[1]
-			_prossesInfo.Nombredesesin = line[2]
-			_prossesInfo.Nmdesesin = line[3]
-			_prossesInfo.Usodememoria = line[4]
-			_prossesInfo.Estado = line[5]
-			_prossesInfo.Nombredeusuario = line[6]
-			_prossesInfo.TiempodeCPU = line[7]
-			_prossesInfo.Ttulodeventana = line[8]
-
-			_hostMetrics.InfoProsses = append(_hostMetrics.InfoProsses, _prossesInfo)
-		} else {
-			frist = true
-		}
+		outStr := string(stdout.Bytes())
+		whriteInFile("prosses", outStr)
 	}
 
 	return _hostMetrics
