@@ -23,10 +23,6 @@ import (
 )
 
 func main() {
-	go backgrounProsses()
-}
-
-func backgrounProsses() {
 	for {
 		_hostMetrics := getMetrics()
 		ctx := context.Background()
