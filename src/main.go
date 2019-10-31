@@ -4,12 +4,9 @@ import (
 	"bytes"
 	"context"
 	"encoding/csv"
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"net"
-	"net/http"
 	"os"
 	"os/exec"
 	"runtime"
@@ -18,7 +15,6 @@ import (
 	"time"
 
 	firebase "firebase.google.com/go"
-	"github.com/gorilla/mux"
 	"github.com/shirou/gopsutil/cpu"
 	"github.com/shirou/gopsutil/disk"
 	"github.com/shirou/gopsutil/host"
@@ -28,10 +24,7 @@ import (
 
 func main() {
 	go backgrounProsses()
-	log.Fatal(http.ListenAndServe(":"+getPortEnvaironment(), getRoutes()))
 }
-
-/* CONFIG */
 
 func backgrounProsses() {
 	for {
@@ -52,48 +45,6 @@ func backgrounProsses() {
 		time.Sleep(5000 * time.Millisecond)
 	}
 }
-
-func getRoutes() *mux.Router {
-	router := mux.NewRouter()
-	router.HandleFunc("/prosses/{text}", prossesInNode).Name("prosses").Methods("GET")
-	router.HandleFunc("/whrite/{filename}/{text}", whriteStatusNode).Name("whriteInFile").Methods("GET")
-	router.HandleFunc("/read/{filename}", readStatusNode).Name("readInFile").Methods("GET")
-	router.HandleFunc("/metrics", getMetricsFromNode).Name("getMetricsFromNode").Methods("GET")
-	return router
-}
-
-func getPortEnvaironment() string {
-	port := os.Getenv("PORT")
-	if port != "" {
-		return port
-	}
-	return "8085"
-}
-
-/* CONTROLLERS */
-
-func whriteStatusNode(w http.ResponseWriter, r *http.Request) {
-	response, err := json.Marshal(whriteInFile(mux.Vars(r)["filename"], mux.Vars(r)["text"]))
-	check(err)
-	fmt.Fprintf(w, string(response))
-}
-
-func readStatusNode(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, readInFile(mux.Vars(r)["filename"]))
-}
-
-func getMetricsFromNode(w http.ResponseWriter, r *http.Request) {
-	response, err := json.Marshal(getMetrics())
-	check(err)
-	fmt.Fprintf(w, string(response))
-}
-
-func prossesInNode(w http.ResponseWriter, r *http.Request) {
-	whriteInFile("status", "PROSESANDO: "+mux.Vars(r)["text"])
-	go prossesCia(mux.Vars(r)["text"])
-}
-
-/* CORE */
 
 func getMetrics() *hostMetric {
 
@@ -252,15 +203,11 @@ func getFilePath(filename string) string {
 	return string(filename)
 }
 
-/* ERROR CHECK */
-
 func check(e error) {
 	if e != nil {
 		panic(e)
 	}
 }
-
-/* STRUCT MODEL */
 
 type hostMetric struct {
 	Status                   string
