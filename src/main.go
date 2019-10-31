@@ -4,8 +4,9 @@ import (
 	"bytes"
 	"context"
 	"encoding/csv"
-	"fmt"
+	"flag"
 	"io/ioutil"
+	"log"
 	"net"
 	"os"
 	"os/exec"
@@ -15,6 +16,7 @@ import (
 	"time"
 
 	firebase "firebase.google.com/go"
+	"github.com/kardianos/service"
 	"github.com/shirou/gopsutil/cpu"
 	"github.com/shirou/gopsutil/disk"
 	"github.com/shirou/gopsutil/host"
@@ -22,24 +24,112 @@ import (
 	"google.golang.org/api/option"
 )
 
-func main() {
-	for {
-		_hostMetrics := getMetrics()
-		ctx := context.Background()
-		opt := option.WithCredentialsFile(getPath() + "firebase_key.json")
-		config := &firebase.Config{
-			ProjectID:   "ht-metricas",
-			DatabaseURL: "https://ht-metricas.firebaseio.com/",
-		}
-		app, err := firebase.NewApp(ctx, config, opt)
-		check(err)
-		client, err := app.Database(ctx)
-		check(err)
-		if err := client.NewRef("info_pc/"+_hostMetrics.HostIDUiid).Set(ctx, _hostMetrics); err != nil {
-			check(err)
-		}
-		time.Sleep(5000 * time.Millisecond)
+var logger service.Logger
+
+type program struct {
+	exit chan struct{}
+}
+
+func (p *program) Start(s service.Service) error {
+	if service.Interactive() {
+		logger.Info("Running in terminal.")
+	} else {
+		logger.Info("Running under service manager.")
 	}
+	p.exit = make(chan struct{})
+	go p.run()
+	return nil
+}
+
+func (p *program) run() error {
+	logger.Infof("I'm running %v.", service.Platform())
+	ticker := time.NewTicker(5 * time.Second)
+	for {
+		select {
+		case tm := <-ticker.C:
+			logger.Infof("Still running at %v...", tm)
+			postmain()
+		case <-p.exit:
+			ticker.Stop()
+			return nil
+		}
+	}
+}
+
+func (p *program) Stop(s service.Service) error {
+	logger.Info("I'm Stopping!")
+	close(p.exit)
+	return nil
+}
+
+func main() {
+	svcFlag := flag.String("service", "", "Control the system service.")
+	flag.Parse()
+
+	options := make(service.KeyValue)
+	options["Restart"] = "on-success"
+	options["SuccessExitStatus"] = "1 2 8 SIGKILL"
+	svcConfig := &service.Config{
+		Name:        "Api_metricas",
+		DisplayName: "Go Service Example for Logging",
+		Description: "This is an example Go service that outputs log messages.",
+		Dependencies: []string{
+			"Requires=network.target",
+			"After=network-online.target syslog.target"},
+		Option: options,
+	}
+
+	prg := &program{}
+	s, err := service.New(prg, svcConfig)
+	if err != nil {
+		log.Fatal(err)
+	}
+	errs := make(chan error, 5)
+	logger, err = s.Logger(errs)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	go func() {
+		for {
+			err := <-errs
+			if err != nil {
+				log.Print(err)
+			}
+		}
+	}()
+
+	if len(*svcFlag) != 0 {
+		err := service.Control(s, *svcFlag)
+		if err != nil {
+			log.Printf("Valid actions: %q\n", service.ControlAction)
+			log.Fatal(err)
+		}
+		return
+	}
+	err = s.Run()
+	if err != nil {
+		logger.Error(err)
+	}
+}
+
+func postmain() {
+
+	_hostMetrics := getMetrics()
+	ctx := context.Background()
+	opt := option.WithCredentialsFile(getPath() + "firebase_key.json")
+	config := &firebase.Config{
+		ProjectID:   "ht-metricas",
+		DatabaseURL: "https://ht-metricas.firebaseio.com/",
+	}
+	app, err := firebase.NewApp(ctx, config, opt)
+	check(err)
+	client, err := app.Database(ctx)
+	check(err)
+	if err := client.NewRef("info_pc/"+_hostMetrics.HostIDUiid).Set(ctx, _hostMetrics); err != nil {
+		check(err)
+	}
+
 }
 
 func getMetrics() *hostMetric {
@@ -180,12 +270,6 @@ func readCsv(filename string) ([][]string, error) {
 		return [][]string{}, err
 	}
 	return lines, nil
-}
-
-func prossesCia(value string) {
-	fmt.Println("ejecuta el .exe con el valor " + value)
-	time.Sleep(10000 * time.Millisecond)
-	whriteInFile("status", "online")
 }
 
 func getPath() string {
