@@ -10,6 +10,7 @@ import (
 	"net"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"runtime"
 	"strconv"
 	"strings"
@@ -42,12 +43,12 @@ func (p *program) Start(s service.Service) error {
 }
 
 func (p *program) run() error {
-	logger.Infof("I'm running %v.", service.Platform())
+	logger.Infof("Api_metricas running %v.", service.Platform())
 	ticker := time.NewTicker(5 * time.Second)
 	for {
 		select {
 		case tm := <-ticker.C:
-			logger.Infof("Still running at %v...", tm)
+			logger.Infof("Still running GetMetrics() at %v...", tm)
 			postmain()
 		case <-p.exit:
 			ticker.Stop()
@@ -57,7 +58,7 @@ func (p *program) run() error {
 }
 
 func (p *program) Stop(s service.Service) error {
-	logger.Info("I'm Stopping!")
+	logger.Info("Api_metricas Stopping!")
 	close(p.exit)
 	return nil
 }
@@ -81,21 +82,16 @@ func main() {
 
 	prg := &program{}
 	s, err := service.New(prg, svcConfig)
-	if err != nil {
-		log.Fatal(err)
-	}
+	check(err)
+
 	errs := make(chan error, 5)
 	logger, err = s.Logger(errs)
-	if err != nil {
-		log.Fatal(err)
-	}
+	check(err)
 
 	go func() {
 		for {
 			err := <-errs
-			if err != nil {
-				log.Print(err)
-			}
+			check(err)
 		}
 	}()
 
@@ -156,7 +152,6 @@ func getMetrics() *hostMetric {
 	interfStat, err := net.Interfaces()
 	check(err)
 
-	_hostMetrics.Status = readInFile("status")
 	_hostMetrics.Os = runtimeOS
 	_hostMetrics.TotalMemory = strconv.FormatUint(vmStat.Total, 10)
 	_hostMetrics.FreeMemory = strconv.FormatUint(vmStat.Free, 10)
@@ -260,7 +255,7 @@ func whriteInFile(filename string, dataToWhrite string) bool {
 }
 
 func readCsv(filename string) ([][]string, error) {
-	f, err := os.Open(filename)
+	f, err := os.Open(getPath() + filename)
 	if err != nil {
 		return [][]string{}, err
 	}
@@ -273,7 +268,7 @@ func readCsv(filename string) ([][]string, error) {
 }
 
 func getPath() string {
-	dir, err := os.Getwd()
+	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 	check(err)
 	return dir + "/"
 }
