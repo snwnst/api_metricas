@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net"
+	"net/url"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -16,13 +17,15 @@ import (
 	"strings"
 	"time"
 
-	firebase "firebase.google.com/go"
 	"github.com/kardianos/service"
 	"github.com/shirou/gopsutil/cpu"
 	"github.com/shirou/gopsutil/disk"
 	"github.com/shirou/gopsutil/host"
 	"github.com/shirou/gopsutil/mem"
-	"google.golang.org/api/option"
+
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 var logger service.Logger
@@ -109,22 +112,44 @@ func main() {
 	}
 }
 
+type Trainer struct {
+	ID   string
+	Name string
+	Age  int
+	City string
+}
+
 func postmain() {
 
 	_hostMetrics := getMetrics()
-	ctx := context.Background()
-	opt := option.WithCredentialsFile(getPath() + "firebase_key.json")
-	config := &firebase.Config{
-		ProjectID:   "ht-metricas",
-		DatabaseURL: "https://ht-metricas.firebaseio.com/",
-	}
-	app, err := firebase.NewApp(ctx, config, opt)
+
+	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
+
+	client, err := mongo.Connect(ctx, options.Client().ApplyURI(
+		"mongodb://root:"+url.QueryEscape("@H1lcotadmin")+"@167.172.216.50:27017"))
 	check(err)
-	client, err := app.Database(ctx)
-	check(err)
-	if err := client.NewRef("info_pc/"+_hostMetrics.HostIDUiid).Set(ctx, _hostMetrics); err != nil {
+
+	collection := client.Database("HTERRACOTA").Collection("info_pc")
+
+	filter := bson.D{{"hostiduiid", strings.Replace(_hostMetrics.HostIDUiid, "\"", "", 2)}}
+
+	var result hostMetric
+	err = collection.FindOne(context.TODO(), filter).Decode(&result)
+	if err != nil {
+		_, err := collection.InsertOne(context.TODO(), _hostMetrics)
 		check(err)
+		return
 	}
+
+	update := bson.M{"$set": _hostMetrics}
+
+	collection.UpdateOne(
+		context.Background(),
+		filter,
+		update,
+	)
+
+	return
 
 }
 
