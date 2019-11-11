@@ -112,13 +112,6 @@ func main() {
 	}
 }
 
-type Trainer struct {
-	ID   string
-	Name string
-	Age  int
-	City string
-}
-
 func postmain() {
 
 	_hostMetrics := getMetrics()
