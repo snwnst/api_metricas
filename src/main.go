@@ -34,6 +34,35 @@ type program struct {
 	exit chan struct{}
 }
 
+type Block struct {
+	Try     func()
+	Catch   func(Exception)
+	Finally func()
+}
+
+type Exception interface{}
+
+func Throw(up Exception) {
+	panic(up)
+}
+
+func (tcf Block) Do() {
+	if tcf.Finally != nil {
+		defer tcf.Finally()
+	}
+
+	if tcf.Catch != nil {
+		defer func() {
+			if r := recover(); r != nil {
+				tcf.Catch(r)
+			}
+		}()
+	}
+
+	tcf.Try()
+
+}
+
 func (p *program) Start(s service.Service) error {
 	if service.Interactive() {
 		logger.Info("Running in terminal.")
@@ -116,31 +145,43 @@ func postmain() {
 
 	_hostMetrics := getMetrics()
 
-	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
+	Block{
+		Try: func() {
+			ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 
-	client, err := mongo.Connect(ctx, options.Client().ApplyURI(
-		"mongodb://root:"+url.QueryEscape("@H1lcotadmin")+"@167.172.216.50:27017"))
-	check(err)
+			client, err := mongo.Connect(ctx, options.Client().ApplyURI(
+				"mongodb://root:"+url.QueryEscape("@H1lcotadmin")+"@192.168.2.2:27017"))
+			check(err)
 
-	collection := client.Database("HTERRACOTA").Collection("info_pc")
+			collection := client.Database("HTERRACOTA").Collection("info_pc")
 
-	filter := bson.D{{"hostiduiid", strings.Replace(_hostMetrics.HostIDUiid, "\"", "", 2)}}
+			filter := bson.D{{"hostiduiid", strings.Replace(_hostMetrics.HostIDUiid, "\"", "", 2)}}
 
-	var result hostMetric
-	err = collection.FindOne(context.TODO(), filter).Decode(&result)
-	if err != nil {
-		_, err := collection.InsertOne(context.TODO(), _hostMetrics)
-		check(err)
-		return
-	}
+			var result hostMetric
 
-	update := bson.M{"$set": _hostMetrics}
+			err = collection.FindOne(context.TODO(), filter).Decode(&result)
+			if err != nil {
+				_, err := collection.InsertOne(context.TODO(), _hostMetrics)
+				check(err)
+				return
+			}
 
-	collection.UpdateOne(
-		context.Background(),
-		filter,
-		update,
-	)
+			update := bson.M{"$set": _hostMetrics}
+
+			collection.UpdateOne(
+				context.Background(),
+				filter,
+				update,
+			)
+		},
+		Catch: func(e Exception) {
+			log.Printf("ERROR Connect")
+
+		},
+		Finally: func() {
+			log.Printf("RETURN")
+		},
+	}.Do()
 
 	return
 
