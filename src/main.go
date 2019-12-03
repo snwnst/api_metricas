@@ -173,6 +173,8 @@ func postmain() {
 				filter,
 				update,
 			)
+
+			err = mongo.Disconnect(context.TODO())
 		},
 		Catch: func(e Exception) {
 			log.Printf("ERROR Connect")
