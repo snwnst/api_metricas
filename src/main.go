@@ -193,6 +193,10 @@ func getMetrics() *hostMetric {
 
 	_hostMetrics := new(hostMetric)
 
+	t := time.Now()
+
+	_hostMetrics.FechaUpdate = t.String()
+
 	runtimeOS := runtime.GOOS
 
 	vmStat, err := mem.VirtualMemory()
@@ -346,6 +350,7 @@ func check(e error) {
 }
 
 type hostMetric struct {
+	FechaUpdate              string
 	Status                   string
 	Os                       string
 	TotalMemory              string
