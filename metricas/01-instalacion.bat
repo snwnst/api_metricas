@@ -1,0 +1,1 @@
+SC CREATE API_METRICAS start=auto binPath= "C:\metricas\main.exe"
