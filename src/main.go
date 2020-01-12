@@ -58,7 +58,6 @@ func (tcf Block) Do() {
 			}
 		}()
 	}
-
 	tcf.Try()
 
 }
